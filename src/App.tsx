@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import {Switch, Route, HashRouter} from 'react-router-dom'
 import {Home} from "./home";
 import {Portfolio} from "./portfolio";
 import {Contact} from "./contact";
 
 function App() {
     return (
-        <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
+        <HashRouter basename={`${process.env.PUBLIC_URL}`}>
             <Switch>
                 <Route path="/portfolio">
                     <Portfolio/>
@@ -19,7 +19,7 @@ function App() {
                     <Home/>
                 </Route>
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
