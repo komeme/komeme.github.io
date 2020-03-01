@@ -1,13 +1,22 @@
 import React from 'react';
 import './App.css';
-import Box from '@material-ui/core/Box';
+import {BrowserRouter, Switch, Route, Link} from 'react-router-dom'
+import {Home} from "./home";
+import {Portfolio} from "./portfolio";
 
 function App() {
-  return (
-    <Box component="span" m={1}>
-      WIP 
-    </Box>
-  );
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route path="/portfolio">
+                    <Portfolio/>
+                </Route>
+                <Route path="">
+                    <Home/>
+                </Route>
+            </Switch>
+        </BrowserRouter>
+    );
 }
 
 export default App;
