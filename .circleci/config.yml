@@ -60,11 +60,10 @@ workflows:
       - build:
           filters:
             branches:
-              ignore:
-                - /gh-pages/
+              ignore: develop
       - deploy:
           requires:
             - build
           filters:
             branches:
-              only: master
+              only: develop
