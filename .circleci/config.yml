@@ -50,9 +50,6 @@ jobs:
           command: |
             git config --global user.email "developer.k.mshr0316@gmail.com"
             git config --global user.name "komeme"
-      - add_ssh_keys:
-          fingerprints:
-            - "f0:14:9f:a6:c8:e2:a6:c3:15:3b:fa:35:11:b4:59:e0"
       - run: yarn run build      
       - run: yarn run deploy
 
