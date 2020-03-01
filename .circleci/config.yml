@@ -1,0 +1,73 @@
+aliases:
+  - &restore-cache
+    keys:
+      - v1-npm-{{ .Branch }}-{{ checksum "package.json" }}
+  - &save-cache
+    key: v1-npm-{{ .Branch }}-{{ checksum "package.json" }}
+    paths:
+      - node_modules
+
+
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:12.1
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+#    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache: *restore-cache
+      - run: yarn install
+      - save_cache: *save-cache
+
+      # run tests!
+      - run: yarn test
+
+  deploy:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:12.1
+
+#    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - restore_cache: *restore-cache
+      - run: yarn install
+      - save_cache: *save-cache
+      - run:
+          name: set git confing
+          command: |
+            git config --global user.email "developer.k.mshr0316@gmail.com"
+            git config --global user.name "komeme"
+      - add_ssh_keys:
+          fingerprints:
+            - "f0:14:9f:a6:c8:e2:a6:c3:15:3b:fa:35:11:b4:59:e0"
+      - run: yarn run build      
+      - run: yarn run deploy
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore:
+                - /gh-pages/
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
