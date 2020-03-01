@@ -60,10 +60,12 @@ workflows:
       - build:
           filters:
             branches:
-              ignore: develop
+              ignore: 
+                - master
       - deploy:
           requires:
             - build
           filters:
             branches:
-              only: develop
+              only: 
+                - develop
