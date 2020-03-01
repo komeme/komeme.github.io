@@ -50,7 +50,8 @@ jobs:
           command: |
             git config --global user.email "developer.k.mshr0316@gmail.com"
             git config --global user.name "komeme"
-      - run: yarn run build      
+      - run: yarn run build
+      - run: cp -r ./.circleci ./build/
       - run: yarn run deploy
 
 workflows:
