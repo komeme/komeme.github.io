@@ -1,9 +1,11 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import {AppBar, Toolbar, IconButton, MenuItem, Typography, Drawer, Divider, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core"
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import PeopleIcon from '@material-ui/icons/People';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import {
+    AppBar,
+    Toolbar,
+    IconButton,
+    MenuItem,
+    Typography,
+} from "@material-ui/core"
 
 export const Home: React.FC = () => (
     <div>
@@ -21,34 +23,6 @@ export const Home: React.FC = () => (
                 </Typography>
             </Toolbar>
         </AppBar>
-        {/*<Drawer*/}
-        {/*    variant="permanent">*/}
-        {/*    <div>*/}
-        {/*        <IconButton>*/}
-        {/*            <ChevronLeftIcon/>*/}
-        {/*        </IconButton>*/}
-        {/*    </div>*/}
-
-        {/*    <Divider/>*/}
-
-        {/*    <List>*/}
-
-        {/*        <ListItem button>*/}
-        {/*            <ListItemIcon>*/}
-        {/*                <PeopleIcon/>*/}
-        {/*            </ListItemIcon>*/}
-        {/*            <ListItemText primary="Contact" />*/}
-        {/*        </ListItem>*/}
-
-        {/*        <ListItem button>*/}
-        {/*            <ListItemIcon>*/}
-        {/*                <DashboardIcon />*/}
-        {/*            </ListItemIcon>*/}
-        {/*            <ListItemText primary="Portfolio" />*/}
-        {/*        </ListItem>*/}
-
-        {/*    </List>*/}
-        {/*</Drawer>*/}
     </div>
 );
 
