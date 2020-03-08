@@ -1,5 +1,8 @@
 import React from 'react'
+import {BasePage} from "./base-page";
 
 export const Contact: React.FC = () => (
-    <div>Contact</div>
+    <BasePage>
+        Contact
+    </BasePage>
 );
