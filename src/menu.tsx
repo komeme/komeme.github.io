@@ -23,9 +23,13 @@ export const Menu: React.FC<MenuProps> = props => (
                 <Link to="/home">
                     <ListItemText primary="Home" />
                 </Link>
+            </ListItem>
+            <ListItem button>
                 <Link to="/portfolio">
                     <ListItemText primary="Portfolio" />
                 </Link>
+            </ListItem>
+            <ListItem button>
                 <Link to="/contact">
                     <ListItemText primary="contact" />
                 </Link>
