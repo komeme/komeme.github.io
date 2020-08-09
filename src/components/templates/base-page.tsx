@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Header} from "./header";
-import {Menu} from "./menu";
+import {Header} from "../organisms/header";
+import {Menu} from "../organisms/menu";
 
 export const BasePage: React.FC = ({children}) => {
 

@@ -21,12 +21,12 @@ export const Menu: React.FC<MenuProps> = props => (
         <List>
             <ListItem button>
                 <Link to="/home">
-                    <ListItemText primary="Home" />
+                    <ListItemText primary="HomePage" />
                 </Link>
             </ListItem>
             <ListItem button>
                 <Link to="/portfolio">
-                    <ListItemText primary="Portfolio" />
+                    <ListItemText primary="PortfolioPage" />
                 </Link>
             </ListItem>
             <ListItem button>

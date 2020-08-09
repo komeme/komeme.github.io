@@ -1,22 +1,22 @@
 import React from 'react';
 import './App.css';
 import {Switch, Route, HashRouter} from 'react-router-dom'
-import {Home} from "./home";
-import {Portfolio} from "./portfolio";
-import {Contact} from "./contact";
+import {HomePage} from "./components/pages/home-page";
+import {PortfolioPage} from "./components/pages/portfolio-page";
+import {ContactPage} from "./components/pages/contact-page";
 
 function App() {
     return (
         <HashRouter basename={`${process.env.PUBLIC_URL}`}>
             <Switch>
                 <Route path="/portfolio">
-                    <Portfolio/>
+                    <PortfolioPage/>
                 </Route>
                 <Route path="/contact">
-                    <Contact/>
+                    <ContactPage/>
                 </Route>
                 <Route path="">
-                    <Home/>
+                    <HomePage/>
                 </Route>
             </Switch>
         </HashRouter>
