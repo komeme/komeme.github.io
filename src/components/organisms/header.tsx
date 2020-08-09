@@ -16,7 +16,7 @@ export const Header: React.FC<HeaderProps> = props => (
                 <MenuIcon onClick={props.onClickMenuIcon}/>
             </IconButton>
             <Typography component="h1" variant="h6" color="inherit" noWrap>
-                Masahiro Komeda
+                Comeme's Official Web Site
             </Typography>
         </Toolbar>
     </AppBar>
