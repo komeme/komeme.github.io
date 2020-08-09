@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build -b gh-pages -m 'update [ci skip]'"
+    "deploy": "gh-pages -d build -b gh-pages -m '[ci skip] update'"
   },
   "homepage": "https://komeme.github.io",
   "eslintConfig": {
